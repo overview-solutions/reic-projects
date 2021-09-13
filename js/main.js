@@ -13,7 +13,7 @@ var map = new mapboxgl.Map({
     //style: 'mapbox://styles/earthadam/cjggwweef00002rpuoj1t93h3',	//Desert
     //style: 'mapbox://styles/earthadam/cjs968jaf2e1j1fmp6hj0pwwn',
     center: [13.902049,3.489016],
-    zoom: 2
+    zoom: 5
 });
 
 var icon = "circle";
@@ -36,7 +36,7 @@ map.on('load', function() {
         legend.appendChild(item);
       }
     //map.addSource('projects', { type: 'geojson', data: 'projects.geojson' });
-    map.addSource('projects', { type: 'geojson', data: 'https://raw.githubusercontent.com/overview-solutions/RemoteMonitorMap/master/projects.geojson' });
+    map.addSource('projects', { type: 'geojson', data: 'https://raw.githubusercontent.com/overview-solutions/reic-projects/master/projects.geojson' });
     // Add a layer showing the places.
     map.addLayer({
         "id": "sites",
