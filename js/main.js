@@ -12,8 +12,8 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/earthadam/cjxo0sdri31o01clrrw3qesbq',	//Presentation
     //style: 'mapbox://styles/earthadam/cjggwweef00002rpuoj1t93h3',	//Desert
     //style: 'mapbox://styles/earthadam/cjs968jaf2e1j1fmp6hj0pwwn',
-    center: [13.902049,3.489016],
-    zoom: 5
+    center: [10.902049,7],
+    zoom: 5.2
 });
 
 var icon = "circle";
@@ -50,22 +50,8 @@ map.on('load', function() {
             },
             // color circles by ethnicity, using a match expression
             // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-            'circle-color': [
-                'match',
-                ['get', 'Map Color'],
-                'G', '#00ff00',
-                'Y', '#ffff00',
-                'B', '#39DFff',
-                /* other */ '#fff'
-            ],
-            'circle-stroke-color': [
-                'match',
-                ['get', 'Map Color'],
-                'G', '#004400',
-                'Y', '#444400',
-                'B', '#00497A',
-                /* other */ '#444'
-            ],
+            'circle-color': '#00ff00',
+            'circle-stroke-color': '#00497A',
             'circle-stroke-width':1
         }
     });
@@ -75,7 +61,7 @@ map.on('load', function() {
         closeOnClick: false
     });
 
-    map.on('mouseover', 'sites', function(e) {
+   /* map.on('mouseover', 'sites', function(e) {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
 
@@ -105,6 +91,8 @@ map.on('load', function() {
         }
         
     });
+    */
+   /*
     map.on('click', 'sites', function(e) {
         el.className = 'marker';
         // Change the cursor style as a UI indicator.
@@ -135,7 +123,7 @@ map.on('load', function() {
                 .addTo(map);
         }
     });
-
+*/
     map.on('click', function() {
         map.getCanvas().style.cursor = '';
         popup.remove();
