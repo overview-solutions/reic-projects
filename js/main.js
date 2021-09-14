@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiZWFydGhhZGFtIiwiYSI6ImNqd3Y3amlwczBnMzc0YW4xc2x1NWVuNGoifQ.jQvOGeLkupgLxp31-Oa6gw';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZWFydGhhZGFtIiwiYSI6ImNqd3VzNnN3ZDA2OWE0OHBoN2xrNmlrNGYifQ.MMqPanYD57YyTkaJYxyeHQ';
 
 //Add commas and stuff to cost value
 function numberWithCommas(x) {
@@ -9,7 +9,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     //style: 'mapbox://styles/earthadam/cjvy2aoum109m1ct7j4cce74d',
     //style: 'mapbox://styles/earthadam/cjggo2pka002c2so00qaetnaz',	//Website
-    style: 'mapbox://styles/earthadam/cjxo0sdri31o01clrrw3qesbq',	//Presentation
+    style: 'mapbox://styles/earthadam/cktk74ych0xsr17r4ttuyijg2',	//Presentation
     //style: 'mapbox://styles/earthadam/cjggwweef00002rpuoj1t93h3',	//Desert
     //style: 'mapbox://styles/earthadam/cjs968jaf2e1j1fmp6hj0pwwn',
     center: [10.902049,7],
