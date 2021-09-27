@@ -61,37 +61,20 @@ map.on('load', function() {
         closeOnClick: false
     });
 
-   /* map.on('mouseover', 'sites', function(e) {
+   map.on('mouseover', 'sites', function(e) {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        if(e.features[0].properties["Link"]!=""){
-            popup.setLngLat(e.features[0].geometry.coordinates)
-                .setHTML(
-                "<img src=\"http://smartvillage.ieee.org/wp-content/uploads/flags/" + e.features[0].properties["Country"] + ".png\"style=\"width:100px;height:67px;\"/>" +
-                "<h2>"+ e.features[0].properties["Organization Contracted"]+"</h2>"+
-                '<h3><a href="' + e.features[0].properties["Link"] + '">' + "Link to Project" + '</a></h3>'+
-                e.features[0].properties["Project Name"]+"<br>"+
-                "<b>Country:</b> "+e.features[0].properties["Country"]+"<br>"+
-                "<b>Years Active: </b>"+e.features[0].properties["Years Active"])
-                //.setHTML(e.features[0].properties.description)
-                .addTo(map);
-        }else{
-            popup.setLngLat(e.features[0].geometry.coordinates)
-                .setHTML(
-                "<img src=\"http://smartvillage.ieee.org/wp-content/uploads/flags/" + e.features[0].properties["Country"] + ".png\"style=\"width:100px;height:67px;\"/>" +
-                "<h2>"+ e.features[0].properties["Organization Contracted"]+"</h2>"+
-                e.features[0].properties["Project Name"]+"<br>"+
-                "<b>Country:</b> "+e.features[0].properties["Country"]+"<br>"+
-                "<b>Years Active: </b>"+e.features[0].properties["Years Active"])
-                //.setHTML(e.features[0].properties.description)
-                .addTo(map);
-        }
+        popup.setLngLat(e.features[0].geometry.coordinates)
+            .setHTML(
+            '<h3><a href="' + e.features[0].properties["Link"] + '">' + e.features[0].properties["Village name"] + '</a></h3>')
+            //.setHTML(e.features[0].properties.description)
+            .addTo(map);
         
     });
-    */
+    
    /*
     map.on('click', 'sites', function(e) {
         el.className = 'marker';
