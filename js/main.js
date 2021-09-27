@@ -70,7 +70,6 @@ map.on('load', function() {
         popup.setLngLat(e.features[0].geometry.coordinates)
             .setHTML(
             '<h3><a href="' + e.features[0].properties["Link"] + '">' + e.features[0].properties["Village name"] + '</a></h3>')
-            //.setHTML(e.features[0].properties.description)
             .addTo(map);
         
     });
