@@ -1,7 +1,8 @@
 # Renewable Energy Innovators Cameroon (REIc) Map
-Link to live map: https://overview-solutions.github.io/reic-projects/
-![image](https://user-images.githubusercontent.com/8453197/134829689-39bf435e-bf34-4847-a34c-7ba0eeb3ca51.png)
+[![image][1]][2]
 
+[1]: https://user-images.githubusercontent.com/8453197/134829689-39bf435e-bf34-4847-a34c-7ba0eeb3ca51.png
+[2]: https://overview-solutions.github.io/reic-projects/
 
 ## Introduction
 Renewable Energy Innovators Cameroon (REIc) is a business in Cameroon focusing on the electrification of villages in rural parts of the nation through the use of renewable energy.
