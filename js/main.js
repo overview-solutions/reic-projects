@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiZWFydGhhZGFtIiwiYSI6ImNqd3Y3amlwczBnMzc0YW4xc2x1NWVuNGoifQ.jQvOGeLkupgLxp31-Oa6gw';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZWFydGhhZGFtIiwiYSI6ImNqd3VzNnN3ZDA2OWE0OHBoN2xrNmlrNGYifQ.MMqPanYD57YyTkaJYxyeHQ';
 
 //Add commas and stuff to cost value
 function numberWithCommas(x) {
@@ -9,11 +9,11 @@ var map = new mapboxgl.Map({
     container: 'map',
     //style: 'mapbox://styles/earthadam/cjvy2aoum109m1ct7j4cce74d',
     //style: 'mapbox://styles/earthadam/cjggo2pka002c2so00qaetnaz',	//Website
-    style: 'mapbox://styles/earthadam/cjxo0sdri31o01clrrw3qesbq',	//Presentation
+    style: 'mapbox://styles/earthadam/cktk74ych0xsr17r4ttuyijg2',	//Presentation
     //style: 'mapbox://styles/earthadam/cjggwweef00002rpuoj1t93h3',	//Desert
     //style: 'mapbox://styles/earthadam/cjs968jaf2e1j1fmp6hj0pwwn',
-    center: [13.902049,3.489016],
-    zoom: 2
+    center: [10.902049,7],
+    zoom: 5.2
 });
 
 var icon = "circle";
@@ -36,7 +36,7 @@ map.on('load', function() {
         legend.appendChild(item);
       }
     //map.addSource('projects', { type: 'geojson', data: 'projects.geojson' });
-    map.addSource('projects', { type: 'geojson', data: 'https://raw.githubusercontent.com/overview-solutions/RemoteMonitorMap/master/projects.geojson' });
+    map.addSource('projects', { type: 'geojson', data: 'https://raw.githubusercontent.com/overview-solutions/reic-projects/master/projects.geojson' });
     // Add a layer showing the places.
     map.addLayer({
         "id": "sites",
@@ -50,22 +50,8 @@ map.on('load', function() {
             },
             // color circles by ethnicity, using a match expression
             // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-            'circle-color': [
-                'match',
-                ['get', 'Map Color'],
-                'G', '#00ff00',
-                'Y', '#ffff00',
-                'B', '#39DFff',
-                /* other */ '#fff'
-            ],
-            'circle-stroke-color': [
-                'match',
-                ['get', 'Map Color'],
-                'G', '#004400',
-                'Y', '#444400',
-                'B', '#00497A',
-                /* other */ '#444'
-            ],
+            'circle-color': '#00ff00',
+            'circle-stroke-color': '#00497A',
             'circle-stroke-width':1
         }
     });
@@ -75,36 +61,20 @@ map.on('load', function() {
         closeOnClick: false
     });
 
-    map.on('mouseover', 'sites', function(e) {
+   map.on('mouseover', 'sites', function(e) {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        if(e.features[0].properties["Link"]!=""){
-            popup.setLngLat(e.features[0].geometry.coordinates)
-                .setHTML(
-                "<img src=\"http://smartvillage.ieee.org/wp-content/uploads/flags/" + e.features[0].properties["Country"] + ".png\"style=\"width:100px;height:67px;\"/>" +
-                "<h2>"+ e.features[0].properties["Organization Contracted"]+"</h2>"+
-                '<h3><a href="' + e.features[0].properties["Link"] + '">' + "Link to Project" + '</a></h3>'+
-                e.features[0].properties["Project Name"]+"<br>"+
-                "<b>Country:</b> "+e.features[0].properties["Country"]+"<br>"+
-                "<b>Years Active: </b>"+e.features[0].properties["Years Active"])
-                //.setHTML(e.features[0].properties.description)
-                .addTo(map);
-        }else{
-            popup.setLngLat(e.features[0].geometry.coordinates)
-                .setHTML(
-                "<img src=\"http://smartvillage.ieee.org/wp-content/uploads/flags/" + e.features[0].properties["Country"] + ".png\"style=\"width:100px;height:67px;\"/>" +
-                "<h2>"+ e.features[0].properties["Organization Contracted"]+"</h2>"+
-                e.features[0].properties["Project Name"]+"<br>"+
-                "<b>Country:</b> "+e.features[0].properties["Country"]+"<br>"+
-                "<b>Years Active: </b>"+e.features[0].properties["Years Active"])
-                //.setHTML(e.features[0].properties.description)
-                .addTo(map);
-        }
+        popup.setLngLat(e.features[0].geometry.coordinates)
+            .setHTML(
+            '<h3><a href="' + e.features[0].properties["Link"] + '">' + e.features[0].properties["Village name"] + '</a></h3>')
+            .addTo(map);
         
     });
+    
+   /*
     map.on('click', 'sites', function(e) {
         el.className = 'marker';
         // Change the cursor style as a UI indicator.
@@ -135,7 +105,7 @@ map.on('load', function() {
                 .addTo(map);
         }
     });
-
+*/
     map.on('click', function() {
         map.getCanvas().style.cursor = '';
         popup.remove();
