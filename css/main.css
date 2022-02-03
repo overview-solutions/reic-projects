@@ -61,6 +61,22 @@ body {
     margin-bottom: 10px;
     width: 100px;
   }
+
+
+  #fly {
+    display: block;
+    position: relative;
+    margin: 0px auto;
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #ee8a65;
+  }
   
   .legend-key {
     display: inline-block;

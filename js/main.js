@@ -18,6 +18,17 @@ var map = new mapboxgl.Map({
 
 var icon = "circle";
 
+document.getElementById('fly').addEventListener('click', () => {
+    // Fly to a random location by offsetting the point -74.50, 40
+    // by up to 5 degrees.
+    map.flyTo({
+    center: [11.5373476,4.7891482],
+    zoom: 19,
+    pitch: 45,
+    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
+    });
+
 map.on('load', function() {
     var layers = ['Retired','Active', 'Future'];
     var colors = ['#39DFff','#00FF00', '#FFFF00'];
@@ -55,6 +66,16 @@ map.on('load', function() {
             'circle-stroke-width':1
         }
     });
+
+    map.addLayer({
+        'id' : 'Surveys',
+        'type' : 'raster',
+        "source" : {
+            'type' : 'raster',
+            'url' : 'mapbox://earthadam.59vmkunc',
+        }
+    });
+    
     // Create a popup, but don't add it to the map yet.
     var popup = new mapboxgl.Popup({
         closeButton: false,
